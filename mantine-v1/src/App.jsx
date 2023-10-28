@@ -1,19 +1,22 @@
-import FormInput from './forms/FormInput';
-import Citizenship from './forms/Citizenship';
-import Stepper from './Stepper/Stepper';
-import './App.css'
+import '@mantine/core/styles.css';
+import { SideNav } from './components/sidenav/index';
+import { Group, MantineProvider, createTheme } from '@mantine/core';
+import CStepper from './components/stepper/Stepper';
 
-function App() {
+const theme = createTheme({
+
+});
+
+const App = () => {
+
   return (
-    <>
-    <Stepper />
-    <FormInput />
-    <Citizenship />
-    </>
-  )
+    <MantineProvider theme={theme}>
+    <Group>
+    <SideNav />
+    <CStepper />
+    </Group>
+    </MantineProvider>
+  );
 }
 
-export default App
-
-
-
+export default App;
